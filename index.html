@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIOR &mdash; Official Luxury Beauty & Fragrance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Italiana&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #09090b;
+      --bg-surface: #121215;
+      --bg-card: #16161b;
+      --text-main: #f5f5f7;
+      --text-muted: #8e8e98;
+      --text-dim: #60606b;
+      --gold-accent: #d4af62;
+      --gold-bg: #aa8139;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --font-serif: 'Bodoni Moda', 'Italiana', 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================
+       HERO VIDEO SECTION
+       Height: 3 of 4 size of laptop screen (75vh)
+       Width: full of laptop (100vw)
+       ========================================= */
+    .hero-container {
+      position: relative;
+      width: 100vw;
+      height: 75vh;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      z-index: 1;
+      pointer-events: none;
+      display: block;
+    }
+
+    /* Cinematic gradient overlay for typography clarity */
+    .hero-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(9, 9, 11, 0.12) 0%,
+        rgba(9, 9, 11, 0.45) 75%,
+        rgba(9, 9, 11, 0.95) 100%
+      ), linear-gradient(
+        180deg,
+        rgba(9, 9, 11, 0.85) 0%,
+        rgba(9, 9, 11, 0.2) 30%,
+        rgba(9, 9, 11, 0.15) 60%,
+        rgba(9, 9, 11, 0.85) 92%,
+        #09090b 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* All content overlaid directly on the video */
+    .hero-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 50px 20px;
+      pointer-events: none;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      pointer-events: auto;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: opacity 0.3s ease;
+    }
+
+    .brand-logo:hover {
+      opacity: 0.85;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-icon {
+      color: rgba(255, 255, 255, 0.85);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-icon:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    /* Center Hero Title Block */
+    .hero-center {
+      text-align: center;
+      margin-top: -10px;
+      pointer-events: auto;
+    }
+
+    .hero-kicker {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--gold-accent);
+      letter-spacing: 0.26em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.05;
+      color: #ffffff;
+      text-shadow: 0 4px 40px rgba(0, 0, 0, 0.9);
+      display: inline-block;
+      position: relative;
+      max-width: 900px;
+    }
+
+    .hero-title .sparkle-star {
+      font-family: var(--font-sans);
+      font-size: 0.4em;
+      color: var(--gold-accent);
+      vertical-align: super;
+      margin-left: 4px;
+      display: inline-block;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 98, 0.8));
+    }
+
+    .hero-desc {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 620px;
+      margin: 12px auto 18px;
+      line-height: 1.5;
+    }
+
+    .hero-cta-btn {
+      display: inline-block;
+      padding: 11px 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta-btn:hover {
+      background: #ffffff;
+      color: #09090b;
+      border-color: #ffffff;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Hero bottom bar inside 75vh */
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 6px;
+    }
+
+    .hero-subtext {
+      text-align: left;
+      pointer-events: auto;
+    }
+
+    .hero-subtext-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .hero-subtext-meta {
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      color: rgba(255, 255, 255, 0.45);
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* ONLY button on the video: Dedicated Luxury Pause Button */
+    .pause-control-wrapper {
+      pointer-events: auto;
+    }
+
+    .pause-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: rgba(18, 18, 22, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pause-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.55);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
+    }
+
+    .pause-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+    }
+
+    /* =========================================
+       PAGE CONTENT CONTAINER
+       ========================================= */
+    .main-content {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12) 15%, rgba(255, 255, 255, 0.12) 85%, transparent);
+      margin: 70px 0;
+    }
+
+    .pill-btn {
+      display: inline-block;
+      padding: 12px 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.03);
+      color: rgba(255, 255, 255, 0.92);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .pill-btn:hover {
+      background: #ffffff;
+      color: #09090b;
+      border-color: #ffffff;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    /* =========================================
+       SECTION 2: FEATURED FRAGRANCE (SAUVAGE)
+       ========================================= */
+    .section-luxury {
+      padding: 40px 0 20px;
+      position: relative;
+    }
+
+    .luxury-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .scents-col {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .scents-arch-card {
+      position: relative;
+      width: 330px;
+      max-width: 100%;
+      border-radius: 180px 180px 8px 8px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .scents-arch-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 35px 75px rgba(0, 0, 0, 0.95);
+    }
+
+    .scents-arch-card img {
+      width: 100%;
+      height: 420px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .luxury-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 10px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .luxury-main-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 4.8vw, 4.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.5;
+      max-width: 480px;
+    }
+
+    /* =========================================
+       SECTION 3: FEATURED MAKEUP (ROUGE DIOR)
+       ========================================= */
+    .section-showcase {
+      padding: 30px 0 20px;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    /* Left Column: Rouge Dior Intro */
+    .lovet-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .lovet-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lovet-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+    }
+
+    .gold-seal-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f0d297 15%, #b1853d 85%);
+      box-shadow: 0 0 12px rgba(212, 175, 98, 0.55);
+      position: relative;
+    }
+
+    .gold-seal-badge::after {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #472f09;
+    }
+
+    .lovet-description {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 300px;
+    }
+
+    .makeup-feature-name {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* Center Column: Rouge Dior Arch */
+    .center-arch-col {
+      display: flex;
+      justify-content: center;
+    }
+
+    .center-arch-frame {
+      width: 250px;
+      border-radius: 140px 140px 10px 10px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 30%, #523a35 0%, #261917 50%, #0e0909 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      transition: transform 0.4s ease;
+    }
+
+    .center-arch-frame:hover {
+      transform: translateY(-6px);
+    }
+
+    .center-arch-frame img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right Column: Ink product, categories & explore */
+    .categories-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-left: 20px;
+    }
+
+    .category-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .cat-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .cat-title:hover {
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    .cat-sub {
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    .mini-thumb-card {
+      width: 130px;
+      height: 100px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+      margin: 4px 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mini-thumb-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gold-feature-card {
+      width: 145px;
+      padding: 22px 18px;
+      background-color: var(--gold-bg);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gold-feature-card:hover {
+      transform: translateY(-4px);
+      filter: brightness(1.08);
+    }
+
+    .gold-tag-small {
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+    }
+
+    .gold-link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* =========================================
+       SECTION 4: SEASONAL COLLECTION (LUCKY CLOVER)
+       ========================================= */
+    .section-seasonal {
+      padding: 30px 0;
+    }
+
+    .seasonal-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .seasonal-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .seasonal-hero-banner {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .seasonal-hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .seasonal-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .product-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .product-img-wrapper {
+      width: 220px;
+      height: 220px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .product-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .product-color {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .seasonal-cta-center {
+      text-align: center;
+    }
+
+    /* =========================================
+       SECTION 5: BEAUTY SERVICES
+       ========================================= */
+    .section-services {
+      padding: 40px 0;
+    }
+
+    .services-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+
+    .services-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .services-desc {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .service-card-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-card-body {
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .service-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .service-card-desc {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .service-card-link {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .service-card-link:hover {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       SECTION 6: E-BOUTIQUE ADVANTAGES
+       ========================================= */
+    .section-advantages {
+      padding: 30px 0;
+    }
+
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 40px 30px;
+    }
+
+    .advantage-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .advantage-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+
+    .advantage-desc {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .advantage-link {
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    /* =========================================
+       SECTION 7: NEWSLETTER & BOUTIQUES
+       ========================================= */
+    .newsletter-boutique-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      margin: 40px 0 20px;
+    }
+
+    .newsletter-box {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .newsletter-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .newsletter-text {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--gold-accent);
+    }
+
+    .newsletter-btn {
+      padding: 12px 32px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-accent);
+      background: var(--gold-bg);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-btn:hover {
+      background: #ffffff;
+      color: #09090b;
+      border-color: #ffffff;
+    }
+
+    .boutique-box {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .boutique-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    .boutique-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .boutique-item-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .boutique-item-link:hover {
+      border-color: var(--gold-accent);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateX(4px);
+    }
+
+    /* =========================================
+       FOOTER: CLIENT SERVICES, MAISON DIOR, LEGAL
+       ========================================= */
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: #050507;
+      padding: 60px 24px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .country-selector-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .country-label {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    .country-value {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      letter-spacing: 0.25em;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .footer-legal-inline {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal-inline a {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal-inline a:hover {
+      color: var(--text-muted);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .advantages-grid {
+        grid-template-columns: 1fr;
+      }
+      .newsletter-boutique-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 20px 24px;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .luxury-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .lovet-col {
+        align-items: center;
+      }
+      .categories-col {
+        align-items: center;
+        padding-left: 0;
+      }
+      .seasonal-products-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       PRIMARY HERO SECTION
+       Video takes height 75vh (3/4 of laptop screen),
+       width 100vw. Only pause button exists on video.
+       Content overlaid directly on the video.
+       ========================================= -->
+  <section class="hero-container" id="home">
+    <video id="perfumeVideo" class="hero-video" autoplay loop muted playsinline>
+      <source src="Perfume_bottle_spinning_on_surface_202609081144.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+
+    <!-- Dark gradient overlay for typography clarity -->
+    <div class="hero-gradient"></div>
+
+    <!-- All Hero Content Overlaid On The Video -->
+    <div class="hero-content">
+      <!-- Top Navbar -->
+      <header class="navbar">
+        <a href="#home" class="brand-logo"></a>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#fragrance" class="nav-link">Fragrance</a></li>
+            <li><a href="#makeup" class="nav-link">Makeup</a></li>
+            <li><a href="#seasonal" class="nav-link">New Arrivals</a></li>
+            <li><a href="#seasonal" class="nav-link">Collections</a></li>
+            <li><a href="#services" class="nav-link">Beauty Services</a></li>
+            <li><a href="#boutiques" class="nav-link">Find a Boutique</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <span class="nav-icon" title="Account">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </span>
+          <span class="nav-icon" title="Bag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </span>
+        </div>
+      </header>
+
+      <!-- Center Hero Brand Title -->
+      <div class="hero-center">
+        <p class="hero-kicker"></p>
+        <h1 class="hero-title"><span class="sparkle-star"></span></h1>
+        <p class="hero-desc"></p>
+      
+      </div>
+
+      <!-- Hero Bottom Bar -->
+      <div class="hero-bottom">
+        <div class="hero-subtext">
+          <p class="hero-subtext-title">DIOR</p>
+          <p class="hero-subtext-meta">ESPRIT DE PARFUM<br>LA COLLECTION PRIV&Eacute;E CHRISTIAN DIOR</p>
+        </div>
+
+        <!-- ONLY button on the video: Sleek Luxury Pause Button -->
+        <div class="pause-control-wrapper">
+          <button id="pauseBtn" class="pause-btn" aria-label="Pause Video">
+            <span id="pauseIcon" class="pause-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="5" y="3" width="5" height="18" rx="1"/>
+                <rect x="14" y="3" width="5" height="18" rx="1"/>
+              </svg>
+            </span>
+            <span id="pauseText">Pause</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       MAIN CONTENT SECTIONS
+       ========================================= -->
+  <main class="main-content">
+    
+    <!-- SECTION 2: FEATURED FRAGRANCE (SAUVAGE) -->
+    <section class="section-luxury" id="fragrance">
+      <div class="luxury-grid">
+        <!-- Left: Arched Cologne Frame with Sauvage Campaign Image -->
+        <div class="scents-col">
+          <div class="scents-arch-card">
+            <img src="Christian%20Dior%20Sauvage%20(Eau%20de%20Toilette)%20Perfume%20For%20Men.jpg" alt="Dior Sauvage Eau de Parfum">
+          </div>
+        </div>
+
+        <!-- Right: Sauvage Title & CTA -->
+        <div class="luxury-col">
+          <span class="section-eyebrow">Featured Fragrance</span>
+          <h2 class="luxury-main-title">Dior Sauvage</h2>
+          <p class="section-subtitle">Raw and noble, just like a wide-open sky above the desert. A radically fresh composition, Dior Sauvage Eau de Parfum is a powerful and feral signature for men who embrace nature's force.</p>
+          <a href="https://www.dior.com/en_int/beauty/products/sauvage-eau-de-parfum-Y0997133.html" target="_blank" rel="noopener noreferrer" class="pill-btn">Discover</a>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 2B: MISS DIOR CHERRY BLOSSOM -->
+    <section class="section-luxury" id="cherry-blossom">
+      <div class="luxury-grid">
+        <!-- Left: Arched Frame with Cherry Blossom Image -->
+        <div class="scents-col">
+          <div class="scents-arch-card">
+            <img src="Cherry%20Blossom%20Perfume%20Aesthetic.jpg" alt="Miss Dior Cherry Blossom Eau de Toilette">
+          </div>
+        </div>
+
+        <!-- Right: Miss Dior Cherry Blossom Title & CTA -->
+        <div class="luxury-col">
+          <h2 class="luxury-main-title">Miss Dior<br>Cherry Blossom</h2>
+          <p class="section-subtitle">A light and joyful floral freshness, like a breath of spring. Miss Dior Cherry Blossom Eau de Toilette blooms with notes of cherry blossom petals, mandarin, and a touch of white musk — a delicate, feminine tribute to the art of living.</p>
+          <a href="https://www.dior.com/en_int/beauty/products/miss-dior-cherry-blossom-eau-de-toilette-Y0004700.html" target="_blank" rel="noopener noreferrer" class="pill-btn">Discover</a>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 2C: DIOR LA COLLECTION PRIVÉE – JASMIN DES ANGES -->
+    <section class="section-luxury" id="jasmin-des-anges">
+      <div class="luxury-grid">
+        <!-- Left: Arched Frame with Jasmin des Anges campaign image -->
+        <div class="scents-col">
+          <div class="scents-arch-card">
+            <img src="3rd_Dior%2016x9/ezgif-frame-059.jpg" alt="Dior La Collection Privée — Jasmin des Anges" style="object-position: center top;">
+          </div>
+        </div>
+
+        <!-- Right: Jasmin des Anges Title & CTA -->
+        <div class="luxury-col">
+          <h2 class="luxury-main-title">La Collection Privée<br>Jasmin des Anges</h2>
+          <p class="section-subtitle">From the terraced gardens of Grasse, Dior's master perfumer hand-selects each jasmine bloom at dawn. An ineffable white floral of extraordinary depth — Jasmin des Anges is poetry distilled into a single, radiant fragrance.</p>
+          <a href="https://www.dior.com/en_int/beauty/products/jasmin-des-anges-eau-de-parfum-Y0997162.html" target="_blank" rel="noopener noreferrer" class="pill-btn">Discover</a>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 3: FEATURED MAKEUP (ROUGE DIOR) -->
+    <section class="section-showcase" id="makeup">
+      <div class="showcase-grid">
+        <!-- Left Column: Rouge Dior On Stage -->
+        <div class="lovet-col">
+          <span class="section-eyebrow">Featured Makeup</span>
+          <div class="lovet-title-row">
+            <h3 class="lovet-heading">Rouge Dior</h3>
+            <span class="gold-seal-badge"></span>
+          </div>
+          <p class="lovet-description">
+            The new 24-hour transfer-proof matte lipsticks.
+          </p>
+          <p class="makeup-feature-name">Feature: Rouge Dior On Stage</p>
+          <div style="margin-top: 10px;">
+            <a href="https://www.dior.com/en_int/beauty/products/rouge-dior-on-stage-Y0000265.html" target="_blank" rel="noopener noreferrer" class="pill-btn" style="padding: 10px 28px;">Discover</a>
+          </div>
+        </div>
+
+        <!-- Center Column: Rouge Dior On Stage Arch -->
+        <div class="center-arch-col">
+          <div class="center-arch-frame">
+            <img src="dior_rouge_on_stage.jpg" alt="Rouge Dior On Stage">
+          </div>
+        </div>
+
+        <!-- Right Column: Rouge Dior On Stage Ink & Collection CTA -->
+        <div class="categories-col">
+          <div class="category-group">
+            <span class="cat-title">Rouge Dior On Stage Ink</span>
+            <span class="cat-sub">High Precision & Intense Color</span>
+          </div>
+
+          <div class="mini-thumb-card">
+            <img src="dior_rouge_on_stage_ink.png" alt="Rouge Dior On Stage Ink">
+          </div>
+
+          <a href="https://www.dior.com/en_int/beauty/products/rouge-dior-on-stage-ink-Y0000242.html" target="_blank" rel="noopener noreferrer" class="service-card-link">
+            Discover Ink &rarr;
+          </a>
+
+          <div class="gold-feature-card" onclick="window.open('https://www.dior.com/en_int/beauty/makeup/rouge-dior.html', '_blank')">
+            <span class="gold-tag-small">Collection</span>
+            <div class="gold-link-row">
+              <span>Discover</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 4: SEASONAL COLLECTION (LUCKY CLOVER) -->
+    <section class="section-seasonal" id="seasonal">
+      <div class="seasonal-header">
+        <span class="section-eyebrow">Seasonal Collection</span>
+        <h2 class="seasonal-title">Lucky Clover Fall 2026 Makeup Collection</h2>
+      </div>
+
+      <!-- Campaign Banner -->
+      <div class="seasonal-hero-banner">
+        <img src="dior_lucky_clover.jpg" alt="Lucky Clover Fall 2026 Makeup Collection">
+      </div>
+
+      <!-- Products Grid -->
+      <div class="seasonal-products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="dior_diorshow_5_couleurs.jpg" alt="Diorshow 5 Couleurs – Limited Edition">
+          </div>
+          <h4 class="product-name">Diorshow 5 Couleurs &ndash; Limited Edition</h4>
+          <p class="product-color">Color: 365 Charmed Green</p>
+          <a href="https://www.dior.com/en_int/beauty/products/diorshow-5-couleurs---limited-edition-E000001849.html" target="_blank" rel="noopener noreferrer" class="pill-btn">Discover</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <img src="dior_rouge_blush.jpg" alt="Rouge Blush – Limited Edition">
+          </div>
+          <h4 class="product-name">Rouge Blush &ndash; Limited Edition</h4>
+          <p class="product-color">Color: 889 Charmed Coral</p>
+          <a href="https://www.dior.com/en_int/beauty/products/rouge-blush---limited-edition-E000001856.html" target="_blank" rel="noopener noreferrer" class="pill-btn">Discover</a>
+        </div>
+      </div>
+
+      <div class="seasonal-cta-center">
+        <a href="https://www.dior.com/en_int/beauty/dlp-makeup-lucky-clover-collection.html" target="_blank" rel="noopener noreferrer" class="pill-btn" style="padding: 14px 48px;">Discover Collection</a>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 5: BEAUTY SERVICES -->
+    <section class="section-services" id="services">
+      <div class="services-header">
+        <span class="section-eyebrow">Beauty Services</span>
+        <h2 class="services-title">The finishing touch</h2>
+        <p class="services-desc">Perfection is in the details. Discover Dior services designed to prolong the magic and elevate every beauty experience.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: The Art of Gifting -->
+        <div class="service-card">
+          <img src="dior_art_of_gifting.jpg" alt="The Art of Gifting" class="service-card-img">
+          <div class="service-card-body">
+            <div>
+              <h4 class="service-card-title">The Art of Gifting</h4>
+              <p class="service-card-desc">Discover the art of Dior gifting and present your beauty selection in an iconic Dior couture box.</p>
+            </div>
+            <a href="https://www.dior.com/en_int/beauty/page/art-of-gifting.html" target="_blank" rel="noopener noreferrer" class="service-card-link">Discover &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 2: The Personalisation Atelier -->
+        <div class="service-card">
+          <img src="dior_personalisation.jpg" alt="The Personalisation Atelier" class="service-card-img">
+          <div class="service-card-body">
+            <div>
+              <h4 class="service-card-title">The Personalisation Atelier</h4>
+              <p class="service-card-desc">Discover Dior's personalization experience and create a more unique and memorable beauty gift.</p>
+            </div>
+            <a href="https://www.dior.com/en_int/beauty/page/the-personalization-atelier.html" target="_blank" rel="noopener noreferrer" class="service-card-link">Discover &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Trial Sizes & Miniatures -->
+        <div class="service-card">
+          <img src="dior_samples.jpg" alt="Trial Sizes & Miniatures" class="service-card-img">
+          <div class="service-card-body">
+            <div>
+              <h4 class="service-card-title">Trial Sizes &amp; Miniatures</h4>
+              <p class="service-card-desc">Explore trial sizes and miniatures for discovering Dior fragrances and beauty creations.</p>
+            </div>
+            <a href="https://www.dior.com/en_int/beauty/page/art-of-gifting.html" target="_blank" rel="noopener noreferrer" class="service-card-link">Discover &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service 4: Free Shipping -->
+        <div class="service-card">
+          <img src="dior_packaging.jpg" alt="Free Shipping" class="service-card-img">
+          <div class="service-card-body">
+            <div>
+              <h4 class="service-card-title">Free Shipping</h4>
+              <p class="service-card-desc">Enjoy complimentary delivery according to applicable membership and order conditions.</p>
+            </div>
+            <a href="https://www.dior.com/en_int/beauty/page/art-of-gifting.html" target="_blank" rel="noopener noreferrer" class="service-card-link">Discover &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 6: E-BOUTIQUE ADVANTAGES -->
+    <section class="section-advantages">
+      <div class="advantages-grid">
+        <div class="advantage-item">
+          <h4 class="advantage-title">Complimentary Delivery for Members</h4>
+          <p class="advantage-desc">For guests, delivery is &euro;4.90 or free on orders over &euro;50.</p>
+          <a href="https://www.dior.com/en_int/beauty/services/dlp-eboutique-advantages.html" target="_blank" rel="noopener noreferrer" class="advantage-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="advantage-item">
+          <h4 class="advantage-title">Iconic Dior Packaging</h4>
+          <p class="advantage-desc">Adorn your gift in an iconic Dior couture box.</p>
+          <a href="https://www.dior.com/en_int/beauty/services/dlp-eboutique-advantages.html" target="_blank" rel="noopener noreferrer" class="advantage-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="advantage-item">
+          <h4 class="advantage-title">Complimentary Samples</h4>
+          <p class="advantage-desc">Receive 2 complimentary samples on all orders, with an additional travel size on orders over &euro;150.</p>
+          <a href="https://www.dior.com/en_int/beauty/services/dlp-eboutique-advantages.html" target="_blank" rel="noopener noreferrer" class="advantage-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- SECTION 7: NEWSLETTER & FIND A BOUTIQUE -->
+    <section class="newsletter-boutique-grid" id="boutiques">
+      <!-- Newsletter Section -->
+      <div class="newsletter-box">
+        <h3 class="newsletter-heading">Sign Up for Exclusivity</h3>
+        <p class="newsletter-text">Be among the first to discover Dior beauty creations, new launches, exclusive collections, and exceptional experiences.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Dior Exclusivity.');">
+          <input type="email" placeholder="Enter your email" required class="newsletter-input">
+          <button type="submit" class="newsletter-btn">Confirm</button>
+        </form>
+      </div>
+
+      <!-- Find a Boutique Section -->
+      <div class="boutique-box">
+        <h3 class="boutique-heading">Find a boutique</h3>
+        <div class="boutique-links">
+          <a href="https://www.dior.com/en_int/beauty/find-your-dior-store" target="_blank" rel="noopener noreferrer" class="boutique-item-link">
+            <span>Parfums Christian Dior Boutiques</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="https://www.dior.com/fashion/stores/en_int/search" target="_blank" rel="noopener noreferrer" class="boutique-item-link">
+            <span>Christian Dior Couture Boutiques</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER: CLIENT SERVICES, MAISON DIOR, LEGAL, SOCIAL
+       ========================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Col 1: Client Services -->
+        <div>
+          <h5 class="footer-col-title">Client Services</h5>
+          <ul class="footer-links">
+            <li><a href="https://www.dior.com/en_int/beauty/contact-parfums" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+            <li><a href="https://www.dior.com/en_int/beauty/services/delivery-returns" target="_blank" rel="noopener noreferrer">Delivery &amp; Returns</a></li>
+            <li><a href="https://www.dior.com/en_int/beauty/faq" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+            <li><a href="https://www.dior.com/en_int/beauty/orders" target="_blank" rel="noopener noreferrer">Receive My Invoice</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Maison Dior -->
+        <div>
+          <h5 class="footer-col-title">Maison Dior</h5>
+          <ul class="footer-links">
+            <li><a href="https://www.dior.com/en_int/beauty/sustainability" target="_blank" rel="noopener noreferrer">Dior Sustainability</a></li>
+            <li><a href="https://www.lvmh.com/en/ethics-and-compliance" target="_blank" rel="noopener noreferrer">Ethics &amp; Compliance</a></li>
+            <li><a href="https://www.dior.com/carrieres/index.html?languageSelect=EN" target="_blank" rel="noopener noreferrer">Careers</a></li>
+            <li><a href="https://www.dior.com/en_int/beauty/about-dior" target="_blank" rel="noopener noreferrer">About Dior</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Follow Us (Social Media) -->
+        <div>
+          <h5 class="footer-col-title">Follow Us</h5>
+          <ul class="footer-links">
+            <li><a href="https://www.tiktok.com/@diorbeauty" target="_blank" rel="noopener noreferrer">TikTok &mdash; @diorbeauty</a></li>
+            <li><a href="https://www.instagram.com/diorbeauty" target="_blank" rel="noopener noreferrer">Instagram &mdash; @diorbeauty</a></li>
+            <li><a href="https://twitter.com/Dior" target="_blank" rel="noopener noreferrer">X &mdash; DIOR</a></li>
+            <li><a href="https://www.facebook.com/Dior" target="_blank" rel="noopener noreferrer">Facebook &mdash; Dior</a></li>
+            <li><a href="https://www.snapchat.com/add/dior" target="_blank" rel="noopener noreferrer">Snapchat &mdash; Dior</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Country / Region -->
+        <div class="country-selector-box">
+          <h5 class="footer-col-title">Country / Region</h5>
+          <span class="country-label">Choose your Country or Region &amp; Language</span>
+          <span class="country-value">International version (English)</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-brand">DIOR</span>
+        <div class="footer-legal-inline">
+          <a href="https://www.dior.com/en_int/beauty/legal-terms" target="_blank" rel="noopener noreferrer">Legal Information</a>
+          <a href="https://www.dior.com/en_int/beauty/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="https://www.dior.com/en_int/beauty/general-sales-conditions" target="_blank" rel="noopener noreferrer">General Sales Conditions</a>
+          <a href="#cookies">Cookie Preferences</a>
+          <a href="https://www.dior.com/en_int/beauty/sitemap" target="_blank" rel="noopener noreferrer">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dedicated Pause / Play toggle for the video
+    const video = document.getElementById('perfumeVideo');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const pauseText = document.getElementById('pauseText');
+
+    pauseBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        pauseIcon.innerHTML = `
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="5" y="3" width="5" height="18" rx="1"/>
+            <rect x="14" y="3" width="5" height="18" rx="1"/>
+          </svg>`;
+        pauseText.textContent = 'Pause';
+      } else {
+        video.pause();
+        pauseIcon.innerHTML = `
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6,3 20,12 6,21"/>
+          </svg>`;
+        pauseText.textContent = 'Play';
+      }
+    });
+
+    // Prevent context menu on video to keep all buttons and options completely hidden
+    video.addEventListener('contextmenu', (e) => e.preventDefault());
+  </script>
+</body>
+</html>
